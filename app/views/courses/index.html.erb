@@ -1,0 +1,17 @@
+<h1>Searching for courses on coursera related to <%= @searchterm %></h1>
+<table border="2">
+	<tr>
+		<th>Course Id</th>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<% @courses.each do |course| %>
+		<tr>
+			<td><%= course["id"]%></td>
+			<td><%= image_tag(course["smallIcon"]) if course["smallIcon"] %></td>
+			<td><%= course["name"] %></td>
+			<td><%= course["shortDescription"]%></td>
+		</tr>
+	<% end %>
+</table>
